@@ -1,0 +1,23 @@
+<div class="small-8 large-offset-2">
+    <h2>Resend confirmation instructions</h2>
+    <h4 class="subheader">Enter the email where you would like instructions sent.</h4>
+    <hr />
+
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :login, :class => 'right inline' %>
+        </div>
+        <div class="small-9 columns">
+          <%= f.text_field :login, :autofocus => true %>
+        </div>
+        <div class="small-9 columns small-offset-3">
+          <%= f.submit "Resend confirmation instructions", :class => 'button' %>
+        </div>
+        <div class="small-9 columns small-offset-3">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    <% end %>
+  </div>

@@ -1,0 +1,25 @@
+<div class="small-8 large-offset-2">
+    <h2>Forgot your password?</h2>
+    <h4 class="subheader">Enter your email to reset your password.</h4>
+    <hr />
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="row">
+        <div class="small-3 columns">
+          <%= f.label :email, :class => 'right inline' %>
+        </div>    
+        <div class="small-9 columns">
+          <%= f.text_field :email, :autofocus => true %>
+        </div>
+
+        <div class="small-9 columns small-offset-3">
+          <%= f.submit "Send me reset password instructions", :class => 'button'  %>
+        </div>
+        <div class="small-9 columns small-offset-3">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
